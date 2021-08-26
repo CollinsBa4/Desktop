@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/3.7.0/minified.min.js"></script>
+  </head>
+  <body class="main">
+    Form completion
+    <div class="whole-line -layout-h">
+      <div class="line-divisions -layout-h -full-width -full-height">
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+        <div class="single-line-division -full-height"></div>
+      </div>
+      <div class="complete-line -center -full-height -layout-h-reverse" style="width: 0%;">
+        <div class="check-mark -layout-h -round -bold -bg-white -center -justify-center">0%</div>
+      </div>
+      <div class="codesignal-logo -layout-h-reverse -center -full-width -full-height">
+        <div class="logo-container -layout-h -center-center"></div>
+      </div>
+    </div>
+    <hr />
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label>Visa Type</label>
+        <select id="visaType" class="form-control">
+          <option value="">Select...</option>
+          <option value="H1B">H1B</option>
+          <option value="L1">L1</option>
+          <option value="US citizen">US citizen</option>
+        </select>
+      </div>
+      <div class="form-group col-6">
+        <label>University</label>
+        <input id="university" type="text" class="form-control" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-6">
+        <label>Country</label>
+        <select id="country" class="form-control">
+          <option value="">Select...</option>
+          <option value="US">US</option>
+          <option value="Canada">Canada</option>
+          <option value="Mexico">Mexico</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div class="form-group col-6">
+        <label>Email</label>
+        <input id="email" type="text" class="form-control" />
+      </div>
+    </div>
+  </body>
+</html>
+
+body {
+  padding: 15px;
+}
+
+.-center {
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  -ms-grid-row-align: center;
+  align-items: center;
+}
+
+.-justify-center, .-center-center {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.-bg-white {
+  background-color: #ffffff;
+}
+
+.-bold {
+  font-weight: bold;
+}
+
+.-full-width {
+  width: 100%;
+}
+
+.-full-height {
+  height: 100%;
+}
+
+.-layout-h {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.-layout-h-reverse {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.whole-line {
+    margin: 24px 0 24px 16px;
+    height: 12px;
+    background-color: #F5F6F7;
+    border-radius: 6px;
+    position: relative;
+}
+
+.complete-line {
+    background: linear-gradient(to right, #94BFFF 0%, #2FFABD 100%);
+    border-radius: 6px;
+    position: absolute;
+    -webkit-transition: width 0.1s;
+    transition: width 0.1s;
+}
+
+.line-divisions {
+    position: absolute;
+    -webkit-justify-content: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+}
+
+.single-line-division {
+    width: 3px;
+    background-color: #FFFFFF;
+    z-index: 1;
+}
+
+.check-mark {
+    width: 36px;
+    min-width: 36px;
+    height: 36px;
+    min-height: 36px;
+    border-radius: 50%;
+    margin-right: -18px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    z-index: 2;
+    font-size: 14px;
+}
+
+
+
+let compLevel=0; let perc; function levelbar(compLevel){ for(let i=0; i<compLevel; i+=2){ level[i].classList.add( 'single-line-divisions'); } document.querySelector('.check-mark').innerHTML=`${compLevel}%` } levelbar(compLevel) visaType.addEventListener( 'change',()=>{ if(visa !== 'Select...'){ compLevel +=25; console.log(compLevel) } }) university.addEventListener( 'change',()=>{ if(visa !== 'Select...'){ compLevel +=25; console.log() } }); email.addEventListener( 'change',()=>{ if(visa !== 'Select...'){ compLevel +=25; console.log() } }) country.addEventListener( 'change',()=>{ if(visa !== 'Select...'){ compLevel +=25; console.log() } })
